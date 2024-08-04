@@ -1,0 +1,17 @@
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\bin\Debug\net8.0-windows\ElectroCalc.exe
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\bin\Debug\net8.0-windows\ElectroCalc.deps.json
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\bin\Debug\net8.0-windows\ElectroCalc.runtimeconfig.json
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\bin\Debug\net8.0-windows\ElectroCalc.dll
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\bin\Debug\net8.0-windows\ElectroCalc.pdb
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.Form1.resources
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.Properties.Resources.resources
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.csproj.GenerateResource.cache
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.GeneratedMSBuildEditorConfig.editorconfig
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.AssemblyInfoInputs.cache
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.AssemblyInfo.cs
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.csproj.CoreCompileInputs.cache
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.dll
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\refint\ElectroCalc.dll
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.pdb
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.genruntimeconfig.cache
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ref\ElectroCalc.dll
