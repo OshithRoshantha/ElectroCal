@@ -164,20 +164,20 @@ namespace ElectroCalc
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int noDays=0,units=0;
+            int noDays=0, units=0;
             if (textBox1.Text==""&& textBox2.Text != "" && textBox3.Text != "")
             {
                 noDays= getDays();
             }
-            else if(textBox2.Text==""&& textBox3.Text == ""&& textBox1.Text != "")
+            if(textBox2.Text==""&& textBox3.Text == ""&& textBox1.Text != "")
             {
                 noDays = int.Parse(textBox1.Text);
             }
             if (textBox6.Text == "" && textBox4.Text != "" && textBox5.Text != "")
             {
-                units=getUnits();
+                units = getUnits();
             }
-            else if (textBox5.Text != "" && textBox4.Text != ""&& textBox6.Text != "")
+            if (textBox5.Text == "" && textBox4.Text == ""&& textBox6.Text != "")
             {
                 units = int.Parse(textBox6.Text);
             }
