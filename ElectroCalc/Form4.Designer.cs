@@ -97,9 +97,8 @@
             datePeriod.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             datePeriod.Location = new Point(188, 203);
             datePeriod.Name = "datePeriod";
-            datePeriod.Size = new Size(174, 20);
+            datePeriod.Size = new Size(0, 20);
             datePeriod.TabIndex = 4;
-            datePeriod.Text = "2024-08-14 - 2024-08-13";
             // 
             // days
             // 
@@ -109,9 +108,8 @@
             days.ForeColor = Color.FromArgb(70, 121, 213);
             days.Location = new Point(189, 232);
             days.Name = "days";
-            days.Size = new Size(56, 20);
+            days.Size = new Size(0, 20);
             days.TabIndex = 5;
-            days.Text = "5 Days";
             // 
             // unit1
             // 
@@ -119,9 +117,8 @@
             unit1.BackColor = Color.Transparent;
             unit1.Location = new Point(189, 280);
             unit1.Name = "unit1";
-            unit1.Size = new Size(176, 20);
+            unit1.Size = new Size(0, 20);
             unit1.TabIndex = 6;
-            unit1.Text = "Tariff Scheme: D-2024/07";
             // 
             // unit2
             // 
@@ -129,9 +126,8 @@
             unit2.BackColor = Color.Transparent;
             unit2.Location = new Point(189, 300);
             unit2.Name = "unit2";
-            unit2.Size = new Size(176, 20);
+            unit2.Size = new Size(0, 20);
             unit2.TabIndex = 7;
-            unit2.Text = "Tariff Scheme: D-2024/07";
             // 
             // unit3
             // 
@@ -139,9 +135,8 @@
             unit3.BackColor = Color.Transparent;
             unit3.Location = new Point(189, 320);
             unit3.Name = "unit3";
-            unit3.Size = new Size(176, 20);
+            unit3.Size = new Size(0, 20);
             unit3.TabIndex = 8;
-            unit3.Text = "Tariff Scheme: D-2024/07";
             // 
             // unit4
             // 
@@ -149,9 +144,8 @@
             unit4.BackColor = Color.Transparent;
             unit4.Location = new Point(189, 340);
             unit4.Name = "unit4";
-            unit4.Size = new Size(176, 20);
+            unit4.Size = new Size(0, 20);
             unit4.TabIndex = 9;
-            unit4.Text = "Tariff Scheme: D-2024/07";
             // 
             // unit5
             // 
@@ -159,9 +153,8 @@
             unit5.BackColor = Color.Transparent;
             unit5.Location = new Point(189, 360);
             unit5.Name = "unit5";
-            unit5.Size = new Size(176, 20);
+            unit5.Size = new Size(0, 20);
             unit5.TabIndex = 10;
-            unit5.Text = "Tariff Scheme: D-2024/07";
             // 
             // netCharge
             // 
@@ -171,9 +164,8 @@
             netCharge.ForeColor = Color.FromArgb(70, 121, 213);
             netCharge.Location = new Point(188, 399);
             netCharge.Name = "netCharge";
-            netCharge.Size = new Size(56, 20);
+            netCharge.Size = new Size(0, 20);
             netCharge.TabIndex = 11;
-            netCharge.Text = "5 Days";
             // 
             // Form4
             // 
