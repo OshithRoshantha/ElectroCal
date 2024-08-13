@@ -41,6 +41,8 @@
             unit4 = new Label();
             unit5 = new Label();
             netCharge = new Label();
+            label5 = new Label();
+            fixedCha = new Label();
             SuspendLayout();
             // 
             // label1
@@ -167,6 +169,30 @@
             netCharge.Size = new Size(0, 20);
             netCharge.TabIndex = 11;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.BackColor = Color.Transparent;
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(70, 121, 213);
+            label5.Location = new Point(58, 443);
+            label5.Name = "label5";
+            label5.Size = new Size(93, 40);
+            label5.TabIndex = 12;
+            label5.Text = "Fixed \r\nCharge /LKR";
+            // 
+            // fixedCha
+            // 
+            fixedCha.AutoSize = true;
+            fixedCha.BackColor = Color.Transparent;
+            fixedCha.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            fixedCha.ForeColor = Color.FromArgb(70, 121, 213);
+            fixedCha.Location = new Point(188, 443);
+            fixedCha.Name = "fixedCha";
+            fixedCha.Size = new Size(0, 20);
+            fixedCha.TabIndex = 13;
+            fixedCha.Click += fixedCha_Click;
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -174,6 +200,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
+            Controls.Add(fixedCha);
+            Controls.Add(label5);
             Controls.Add(netCharge);
             Controls.Add(unit5);
             Controls.Add(unit4);
@@ -209,5 +237,7 @@
         private Label unit4;
         private Label unit5;
         private Label netCharge;
+        private Label label5;
+        private Label fixedCha;
     }
 }

@@ -16,14 +16,14 @@ namespace ElectroCalc
         String daysDiff;
         String noUnits;
 
-        public Form4(string dateChange,string daysDiff, string noUnits)
+        public Form4(string dateChange, string daysDiff, string noUnits)
         {
             InitializeComponent();
             this.dateChange = dateChange;
             this.daysDiff = daysDiff;
             this.noUnits = noUnits;
             datePeriod.Text = dateChange;
-            days.Text = daysDiff+" Days";
+            days.Text = daysDiff + " Days";
             showBreakDown();
         }
 
@@ -51,18 +51,21 @@ namespace ElectroCalc
 
             double kWhPerMonth = (usedUnits / days) * 30;
 
-            if(kWhPerMonth <= 60)
+            if (kWhPerMonth <= 60)
             {
-                if(usedUnits <= 30)
+                int allocateForP5 = days;
+                if (usedUnits <= allocateForP5)
                 {
-                    charge = days * 6.00;
-                    unit1.Text = "6.00 * " + days + " = " + charge.ToString("F2");
+                    charge = usedUnits * 6.00;
+                    unit1.Text = "6.00 * " + usedUnits + " = " + charge.ToString("F2");
+                    getFixedCharge(days,100);
                 }
                 else
                 {
                     charge = (days * 6.00) + ((usedUnits - days) * 9.00);
                     unit1.Text = "6.00 * " + days + " = " + (days * 6.00).ToString("F2");
                     unit2.Text = "9.00 * " + (usedUnits - days) + " = " + ((usedUnits - days) * 9.00).ToString("F2");
+                    getFixedCharge(days,250);
                 }
             }
             else
@@ -77,6 +80,7 @@ namespace ElectroCalc
                     charge = (allocateForP1 * unitP1) + ((usedUnits - allocateForP1) * unitP2);
                     unit1.Text = "15.00 * " + allocateForP1 + " = " + (allocateForP1 * unitP1).ToString("F2");
                     unit2.Text = "18.00 * " + (usedUnits - allocateForP1) + " = " + ((usedUnits - allocateForP1) * unitP2).ToString("F2");
+                    getFixedCharge(days,400);
                 }
                 else if (usedUnits <= (allocateForP1 + allocateForP2 + allocateForP3))
                 {
@@ -84,6 +88,7 @@ namespace ElectroCalc
                     unit1.Text = "15.00 * " + allocateForP1 + " = " + (allocateForP1 * unitP1).ToString("F2");
                     unit2.Text = "18.00 * " + allocateForP2 + " = " + (allocateForP2 * unitP2).ToString("F2");
                     unit3.Text = "30.00 * " + (usedUnits - (allocateForP1 + allocateForP2)) + " = " + ((usedUnits - (allocateForP1 + allocateForP2)) * unitP3).ToString("F2");
+                    getFixedCharge(days,1000);
                 }
                 else if (usedUnits <= (allocateForP1 + allocateForP2 + allocateForP3 + allocateForP4))
                 {
@@ -92,6 +97,7 @@ namespace ElectroCalc
                     unit2.Text = "18.00 * " + allocateForP2 + " = " + (allocateForP2 * unitP2).ToString("F2");
                     unit3.Text = "30.00 * " + allocateForP3 + " = " + (allocateForP3 * unitP3).ToString("F2");
                     unit4.Text = "42.00 * " + (usedUnits - (allocateForP1 + allocateForP2 + allocateForP3)) + " = " + ((usedUnits - (allocateForP1 + allocateForP2 + allocateForP3)) * unitP4).ToString("F2");
+                    getFixedCharge(days,1500);
                 }
                 else
                 {
@@ -101,11 +107,21 @@ namespace ElectroCalc
                     unit3.Text = "30.00 * " + allocateForP3 + " = " + (allocateForP3 * unitP3).ToString("F2");
                     unit4.Text = "42.00 * " + allocateForP4 + " = " + (allocateForP4 * unitP4).ToString("F2");
                     unit5.Text = "65.00 * " + (usedUnits - (allocateForP1 + allocateForP2 + allocateForP3 + allocateForP4)) + " = " + ((usedUnits - (allocateForP1 + allocateForP2 + allocateForP3 + allocateForP4)) * unitP5).ToString("F2");
+                    getFixedCharge(days,2000);
                 }
             }
             netCharge.Text = "LRK. " + charge.ToString("F2");
         }
 
+        public void getFixedCharge(int days,int monthlyCharge)
+        {
+            double fixedCharge = ((double)days / 30) * monthlyCharge;
+            fixedCha.Text = "LKR. " + fixedCharge.ToString("F2");
+        }
 
+        private void fixedCha_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
