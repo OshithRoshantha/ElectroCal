@@ -56,7 +56,6 @@
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
             panel1 = new Panel();
-            test = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -362,15 +361,6 @@
             panel1.Size = new Size(250, 27);
             panel1.TabIndex = 60;
             // 
-            // test
-            // 
-            test.AutoSize = true;
-            test.Location = new Point(197, 134);
-            test.Name = "test";
-            test.Size = new Size(50, 20);
-            test.TabIndex = 61;
-            test.Text = "label1";
-            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -378,7 +368,6 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
-            Controls.Add(test);
             Controls.Add(panel1);
             Controls.Add(textBox4);
             Controls.Add(textBox5);
@@ -408,7 +397,7 @@
             MinimumSize = new Size(450, 750);
             Name = "Form3";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ElectroCalc";
+            Text = "ElectroCal";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -444,6 +433,5 @@
         private RadioButton radioButton2;
         private RadioButton radioButton1;
         private Panel panel1;
-        private Label test;
     }
 }

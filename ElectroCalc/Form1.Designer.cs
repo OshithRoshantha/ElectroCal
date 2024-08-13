@@ -176,7 +176,7 @@
             MinimumSize = new Size(450, 750);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "ElectroCalc";
+            Text = "ElectroCal";
             ResumeLayout(false);
             PerformLayout();
         }

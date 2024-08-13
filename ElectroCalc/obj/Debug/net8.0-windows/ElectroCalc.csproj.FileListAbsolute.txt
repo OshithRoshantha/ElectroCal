@@ -18,3 +18,4 @@ D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\
 D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.Form2.resources
 D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.sourcelink.json
 D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.Form3.resources
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.Form4.resources

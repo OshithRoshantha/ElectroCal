@@ -165,13 +165,20 @@ namespace ElectroCalc
         private void button2_Click(object sender, EventArgs e)
         {
             int noDays=0, units=0;
+            String text="";
             if (textBox1.Text==""&& textBox2.Text != "" && textBox3.Text != "")
             {
                 noDays= getDays();
+                text = textBox2.Text + " - " + textBox3.Text;
             }
             if(textBox2.Text==""&& textBox3.Text == ""&& textBox1.Text != "")
             {
                 noDays = int.Parse(textBox1.Text);
+                DateTime currentDate = DateTime.Now;
+                DateTime startDate = currentDate.AddDays(-noDays);
+                string startDateFormatted = startDate.ToString("dd/MM/yyyy");
+                string currentDateFormatted = currentDate.ToString("dd/MM/yyyy");
+                text = startDateFormatted + " - " + currentDateFormatted;
             }
             if (textBox6.Text == "" && textBox4.Text != "" && textBox5.Text != "")
             {
@@ -181,7 +188,9 @@ namespace ElectroCalc
             {
                 units = int.Parse(textBox6.Text);
             }
-            test.Text= noDays.ToString()+units.ToString();
+            this.Close();
+            Form4 form4 = new Form4(text,noDays.ToString(),units.ToString());
+            form4.Show();
         }
     }
 }
