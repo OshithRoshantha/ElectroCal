@@ -34,11 +34,9 @@
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
-            label1 = new Label();
+            userName = new Label();
             button2 = new Button();
             button1 = new Button();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
@@ -46,6 +44,20 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             monthCalendar1 = new MonthCalendar();
+            monthCalendar2 = new MonthCalendar();
+            radioButton3 = new RadioButton();
+            radioButton4 = new RadioButton();
+            textBox4 = new TextBox();
+            textBox5 = new TextBox();
+            textBox6 = new TextBox();
+            label10 = new Label();
+            label11 = new Label();
+            label12 = new Label();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
+            panel1 = new Panel();
+            test = new Label();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // label2
@@ -108,17 +120,17 @@
             label6.TabIndex = 29;
             label6.Text = "Import Units /kWh";
             // 
-            // label1
+            // userName
             // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(212, 188, 12);
-            label1.Location = new Point(40, 59);
-            label1.Name = "label1";
-            label1.Size = new Size(106, 35);
-            label1.TabIndex = 31;
-            label1.Text = "Gimhan";
+            userName.AutoSize = true;
+            userName.BackColor = Color.Transparent;
+            userName.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            userName.ForeColor = Color.FromArgb(212, 188, 12);
+            userName.Location = new Point(40, 59);
+            userName.Name = "userName";
+            userName.Size = new Size(106, 35);
+            userName.TabIndex = 31;
+            userName.Text = "Gimhan";
             // 
             // button2
             // 
@@ -146,32 +158,7 @@
             button1.TabIndex = 40;
             button1.Text = "Clear";
             button1.UseVisualStyleBackColor = false;
-            // 
-            // radioButton1
-            // 
-            radioButton1.AutoSize = true;
-            radioButton1.BackColor = Color.Transparent;
-            radioButton1.Font = new Font("Segoe UI", 8F);
-            radioButton1.Location = new Point(46, 186);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(88, 23);
-            radioButton1.TabIndex = 41;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Pick Days";
-            radioButton1.UseVisualStyleBackColor = false;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.BackColor = Color.Transparent;
-            radioButton2.Font = new Font("Segoe UI", 8F);
-            radioButton2.Location = new Point(157, 186);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(130, 23);
-            radioButton2.TabIndex = 42;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Number of Days";
-            radioButton2.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // label7
             // 
@@ -213,6 +200,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(336, 25);
             textBox1.TabIndex = 46;
+            textBox1.KeyPress += textBox1_KeyPress;
             // 
             // textBox2
             // 
@@ -221,7 +209,7 @@
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(336, 25);
             textBox2.TabIndex = 47;
-            textBox2.TextChanged += textBox2_TextChanged;
+            textBox2.Click += textBox2_Click;
             // 
             // textBox3
             // 
@@ -230,14 +218,158 @@
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(336, 25);
             textBox3.TabIndex = 48;
+            textBox3.Click += textBox3_Click;
             // 
             // monthCalendar1
             // 
-            monthCalendar1.Location = new Point(46, 230);
+            monthCalendar1.Location = new Point(46, 258);
             monthCalendar1.Name = "monthCalendar1";
             monthCalendar1.TabIndex = 49;
             monthCalendar1.Visible = false;
             monthCalendar1.DateChanged += monthCalendar1_DateChanged;
+            // 
+            // monthCalendar2
+            // 
+            monthCalendar2.Location = new Point(46, 305);
+            monthCalendar2.Name = "monthCalendar2";
+            monthCalendar2.TabIndex = 50;
+            monthCalendar2.Visible = false;
+            monthCalendar2.DateChanged += monthCalendar2_DateChanged;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.BackColor = Color.Transparent;
+            radioButton3.Font = new Font("Segoe UI", 8F);
+            radioButton3.Location = new Point(157, 433);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(132, 23);
+            radioButton3.TabIndex = 52;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "Number of Units";
+            radioButton3.UseVisualStyleBackColor = false;
+            radioButton3.CheckedChanged += radioButton3_CheckedChanged;
+            // 
+            // radioButton4
+            // 
+            radioButton4.AutoSize = true;
+            radioButton4.BackColor = Color.Transparent;
+            radioButton4.Font = new Font("Segoe UI", 8F);
+            radioButton4.Location = new Point(46, 433);
+            radioButton4.Name = "radioButton4";
+            radioButton4.Size = new Size(85, 23);
+            radioButton4.TabIndex = 51;
+            radioButton4.TabStop = true;
+            radioButton4.Text = "Readings";
+            radioButton4.UseVisualStyleBackColor = false;
+            radioButton4.CheckedChanged += radioButton4_CheckedChanged;
+            // 
+            // textBox4
+            // 
+            textBox4.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox4.Location = new Point(47, 526);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(336, 25);
+            textBox4.TabIndex = 58;
+            textBox4.KeyPress += textBox4_KeyPress;
+            // 
+            // textBox5
+            // 
+            textBox5.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox5.Location = new Point(46, 479);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(336, 25);
+            textBox5.TabIndex = 57;
+            textBox5.KeyPress += textBox5_KeyPress;
+            // 
+            // textBox6
+            // 
+            textBox6.Font = new Font("Segoe UI", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox6.Location = new Point(46, 574);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(336, 25);
+            textBox6.TabIndex = 56;
+            textBox6.KeyPress += textBox6_KeyPress;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold);
+            label10.Location = new Point(44, 554);
+            label10.Name = "label10";
+            label10.Size = new Size(81, 19);
+            label10.TabIndex = 55;
+            label10.Text = "Units /kWh";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.BackColor = Color.Transparent;
+            label11.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold);
+            label11.Location = new Point(43, 507);
+            label11.Name = "label11";
+            label11.Size = new Size(152, 19);
+            label11.TabIndex = 54;
+            label11.Text = "Current Meter Reading";
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.BackColor = Color.Transparent;
+            label12.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold);
+            label12.Location = new Point(41, 460);
+            label12.Name = "label12";
+            label12.Size = new Size(158, 19);
+            label12.TabIndex = 53;
+            label12.Text = "Previous Meter Reading";
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.BackColor = Color.Transparent;
+            radioButton2.Font = new Font("Segoe UI", 8F);
+            radioButton2.Location = new Point(110, 3);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(130, 23);
+            radioButton2.TabIndex = 42;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Number of Days";
+            radioButton2.UseVisualStyleBackColor = false;
+            radioButton2.CheckedChanged += radioButton2_CheckedChanged;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.BackColor = Color.Transparent;
+            radioButton1.Font = new Font("Segoe UI", 8F);
+            radioButton1.Location = new Point(0, 3);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(88, 23);
+            radioButton1.TabIndex = 41;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Pick Days";
+            radioButton1.UseVisualStyleBackColor = false;
+            radioButton1.CheckedChanged += radioButton1_CheckedChanged;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(radioButton1);
+            panel1.Controls.Add(radioButton2);
+            panel1.Location = new Point(47, 181);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(250, 27);
+            panel1.TabIndex = 60;
+            // 
+            // test
+            // 
+            test.AutoSize = true;
+            test.Location = new Point(197, 134);
+            test.Name = "test";
+            test.Size = new Size(50, 20);
+            test.TabIndex = 61;
+            test.Text = "label1";
             // 
             // Form3
             // 
@@ -246,6 +378,17 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
+            Controls.Add(test);
+            Controls.Add(panel1);
+            Controls.Add(textBox4);
+            Controls.Add(textBox5);
+            Controls.Add(textBox6);
+            Controls.Add(label10);
+            Controls.Add(label11);
+            Controls.Add(label12);
+            Controls.Add(radioButton3);
+            Controls.Add(radioButton4);
+            Controls.Add(monthCalendar2);
             Controls.Add(monthCalendar1);
             Controls.Add(textBox3);
             Controls.Add(textBox2);
@@ -253,11 +396,9 @@
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
-            Controls.Add(radioButton2);
-            Controls.Add(radioButton1);
             Controls.Add(button1);
             Controls.Add(button2);
-            Controls.Add(label1);
+            Controls.Add(userName);
             Controls.Add(label5);
             Controls.Add(label6);
             Controls.Add(label4);
@@ -268,6 +409,8 @@
             Name = "Form3";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ElectroCalc";
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -279,11 +422,9 @@
         private Label label4;
         private Label label5;
         private Label label6;
-        private Label label1;
+        private Label userName;
         private Button button2;
         private Button button1;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
         private Label label7;
         private Label label8;
         private Label label9;
@@ -291,5 +432,18 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private MonthCalendar monthCalendar1;
+        private MonthCalendar monthCalendar2;
+        private RadioButton radioButton3;
+        private RadioButton radioButton4;
+        private TextBox textBox4;
+        private TextBox textBox5;
+        private TextBox textBox6;
+        private Label label10;
+        private Label label11;
+        private Label label12;
+        private RadioButton radioButton2;
+        private RadioButton radioButton1;
+        private Panel panel1;
+        private Label test;
     }
 }

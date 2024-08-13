@@ -15,6 +15,9 @@ namespace ElectroCalc
         public Form3()
         {
             InitializeComponent();
+            radioButton1.Checked = true;
+            radioButton4.Checked = true;
+            textBox6.Enabled = false;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -22,16 +25,12 @@ namespace ElectroCalc
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void textBox2_Click(object sender, EventArgs e)
         {
             monthCalendar1.Visible = true;
             monthCalendar1.Location = new Point(textBox2.Left, textBox2.Bottom);
+            monthCalendar1.BringToFront();
         }
-
         private void monthCalendar1_LostFocus(object sender, EventArgs e)
         {
             monthCalendar1.Visible = false;
@@ -41,6 +40,148 @@ namespace ElectroCalc
         {
             textBox2.Text = monthCalendar1.SelectionStart.ToShortDateString();
             monthCalendar1.Visible = false;
+        }
+        private void textBox3_Click(object sender, EventArgs e)
+        {
+            monthCalendar2.Visible = true;
+            monthCalendar2.Location = new Point(textBox3.Left, textBox3.Bottom);
+            monthCalendar2.BringToFront();
+        }
+        private void monthCalendar2_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            textBox3.Text = monthCalendar2.SelectionStart.ToShortDateString();
+            monthCalendar2.Visible = false;
+        }
+        private void monthCalendar2_LostFocus(object sender, EventArgs e)
+        {
+            monthCalendar2.Visible = false;
+        }
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton2.Checked)
+            {
+                textBox2.Enabled = false;
+                textBox3.Enabled = false;
+            }
+            else
+            {
+                textBox2.Enabled = true;
+                textBox3.Enabled = true;
+            }
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton1.Checked)
+            {
+                textBox1.Enabled = false;
+            }
+            else
+            {
+                textBox1.Enabled = true;
+            }
+        }
+
+        private void radioButton4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton4.Checked)
+            {
+                textBox5.Enabled = true;
+                textBox4.Enabled = true;
+            }
+            else
+            {
+                textBox5.Enabled = false;
+                textBox4.Enabled = false;
+            }
+        }
+
+        private void radioButton3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radioButton3.Checked)
+            {
+                textBox6.Enabled = true;
+            }
+            else
+            {
+                textBox6.Enabled = false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
+            textBox6.Text = "";
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox4_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBox6_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+        
+        public int getDays()
+        {
+            DateTime date1 = DateTime.Parse(textBox2.Text);
+            DateTime date2 = DateTime.Parse(textBox3.Text);
+            return (date2 - date1).Days;
+        }
+
+        public int getUnits()
+        {
+            return int.Parse(textBox4.Text) - int.Parse(textBox5.Text);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            int noDays=0,units=0;
+            if (textBox1.Text==""&& textBox2.Text != "" && textBox3.Text != "")
+            {
+                noDays= getDays();
+            }
+            else if(textBox2.Text==""&& textBox3.Text == ""&& textBox1.Text != "")
+            {
+                noDays = int.Parse(textBox1.Text);
+            }
+            if (textBox6.Text == "" && textBox4.Text != "" && textBox5.Text != "")
+            {
+                units=getUnits();
+            }
+            else if (textBox5.Text != "" && textBox4.Text != ""&& textBox6.Text != "")
+            {
+                units = int.Parse(textBox6.Text);
+            }
+            test.Text= noDays.ToString()+units.ToString();
         }
     }
 }
