@@ -40,6 +40,7 @@
             unit3 = new Label();
             unit4 = new Label();
             unit5 = new Label();
+            netCharge = new Label();
             SuspendLayout();
             // 
             // label1
@@ -162,6 +163,18 @@
             unit5.TabIndex = 10;
             unit5.Text = "Tariff Scheme: D-2024/07";
             // 
+            // netCharge
+            // 
+            netCharge.AutoSize = true;
+            netCharge.BackColor = Color.Transparent;
+            netCharge.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            netCharge.ForeColor = Color.FromArgb(70, 121, 213);
+            netCharge.Location = new Point(188, 399);
+            netCharge.Name = "netCharge";
+            netCharge.Size = new Size(56, 20);
+            netCharge.TabIndex = 11;
+            netCharge.Text = "5 Days";
+            // 
             // Form4
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -169,6 +182,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
+            Controls.Add(netCharge);
             Controls.Add(unit5);
             Controls.Add(unit4);
             Controls.Add(unit3);
@@ -202,5 +216,6 @@
         private Label unit3;
         private Label unit4;
         private Label unit5;
+        private Label netCharge;
     }
 }
