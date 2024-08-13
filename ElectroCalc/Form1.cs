@@ -13,5 +13,15 @@ namespace ElectroCalc
             form2.Show();
             this.Hide();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (1 == 1) //credentials correct
+            {
+                Form3 form3 = new Form3();
+                form3.Show();
+                this.Hide();
+            }
+        }
     }
 }

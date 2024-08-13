@@ -192,6 +192,7 @@
             button2.TabIndex = 38;
             button2.Text = "Sign Up";
             button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // Form2
             // 
