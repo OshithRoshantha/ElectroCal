@@ -1,6 +1,6 @@
 ﻿namespace ElectroCalc
 {
-    partial class Form4
+    partial class totalCharge
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(totalCharge));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -43,6 +43,12 @@
             netCharge = new Label();
             label5 = new Label();
             fixedCha = new Label();
+            label6 = new Label();
+            taxCharge = new Label();
+            label7 = new Label();
+            totalBill = new Label();
+            button1 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -63,7 +69,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(70, 121, 213);
-            label2.Location = new Point(58, 187);
+            label2.Location = new Point(58, 180);
             label2.Name = "label2";
             label2.Size = new Size(53, 20);
             label2.TabIndex = 1;
@@ -86,7 +92,7 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
-            label4.Location = new Point(188, 183);
+            label4.Location = new Point(188, 176);
             label4.Name = "label4";
             label4.Size = new Size(176, 20);
             label4.TabIndex = 3;
@@ -175,7 +181,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.FromArgb(70, 121, 213);
-            label5.Location = new Point(58, 443);
+            label5.Location = new Point(58, 440);
             label5.Name = "label5";
             label5.Size = new Size(93, 40);
             label5.TabIndex = 12;
@@ -193,13 +199,94 @@
             fixedCha.TabIndex = 13;
             fixedCha.Click += fixedCha_Click;
             // 
-            // Form4
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.Black;
+            label6.Location = new Point(58, 504);
+            label6.Name = "label6";
+            label6.Size = new Size(99, 20);
+            label6.TabIndex = 14;
+            label6.Text = "SSCL Tax/LRK";
+            // 
+            // taxCharge
+            // 
+            taxCharge.AutoSize = true;
+            taxCharge.BackColor = Color.Transparent;
+            taxCharge.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            taxCharge.ForeColor = Color.Black;
+            taxCharge.Location = new Point(188, 504);
+            taxCharge.Name = "taxCharge";
+            taxCharge.Size = new Size(0, 20);
+            taxCharge.TabIndex = 15;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.BackColor = Color.Transparent;
+            label7.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label7.ForeColor = Color.FromArgb(253, 57, 149);
+            label7.Location = new Point(58, 550);
+            label7.Name = "label7";
+            label7.Size = new Size(92, 40);
+            label7.TabIndex = 16;
+            label7.Text = "Monthly Bill\r\n/LRK";
+            // 
+            // totalBill
+            // 
+            totalBill.AutoSize = true;
+            totalBill.BackColor = Color.FromArgb(253, 57, 149);
+            totalBill.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            totalBill.ForeColor = Color.White;
+            totalBill.Location = new Point(188, 558);
+            totalBill.Name = "totalBill";
+            totalBill.Padding = new Padding(4);
+            totalBill.Size = new Size(8, 28);
+            totalBill.TabIndex = 17;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(25, 164, 212);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(91, 631);
+            button1.Name = "button1";
+            button1.Size = new Size(115, 39);
+            button1.TabIndex = 18;
+            button1.Text = "Save";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(149, 36, 75);
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
+            button2.ForeColor = SystemColors.ButtonHighlight;
+            button2.Location = new Point(225, 631);
+            button2.Name = "button2";
+            button2.Size = new Size(115, 39);
+            button2.TabIndex = 19;
+            button2.Text = "Exit";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
+            // 
+            // totalCharge
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
+            Controls.Add(button2);
+            Controls.Add(button1);
+            Controls.Add(totalBill);
+            Controls.Add(label7);
+            Controls.Add(taxCharge);
+            Controls.Add(label6);
             Controls.Add(fixedCha);
             Controls.Add(label5);
             Controls.Add(netCharge);
@@ -216,7 +303,7 @@
             Controls.Add(label1);
             MaximumSize = new Size(450, 750);
             MinimumSize = new Size(450, 750);
-            Name = "Form4";
+            Name = "totalCharge";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "ElectroCal";
             ResumeLayout(false);
@@ -239,5 +326,11 @@
         private Label netCharge;
         private Label label5;
         private Label fixedCha;
+        private Label label6;
+        private Label taxCharge;
+        private Label label7;
+        private Label totalBill;
+        private Button button1;
+        private Button button2;
     }
 }

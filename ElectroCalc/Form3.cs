@@ -62,11 +62,14 @@ namespace ElectroCalc
             {
                 textBox2.Enabled = false;
                 textBox3.Enabled = false;
+                textBox2.Text = "";
+                textBox3.Text = "";
             }
             else
             {
                 textBox2.Enabled = true;
                 textBox3.Enabled = true;
+                textBox1.Text = "";
             }
         }
 
@@ -75,10 +78,13 @@ namespace ElectroCalc
             if (radioButton1.Checked)
             {
                 textBox1.Enabled = false;
+                textBox1.Text = "";
             }
             else
             {
                 textBox1.Enabled = true;
+                textBox2.Text = "";
+                textBox3.Text = "";
             }
         }
 
@@ -88,11 +94,14 @@ namespace ElectroCalc
             {
                 textBox5.Enabled = true;
                 textBox4.Enabled = true;
+                textBox6.Text = "";
             }
             else
             {
                 textBox5.Enabled = false;
                 textBox4.Enabled = false;
+                textBox5.Text = "";
+                textBox4.Text = "";
             }
         }
 
@@ -101,10 +110,13 @@ namespace ElectroCalc
             if (radioButton3.Checked)
             {
                 textBox6.Enabled = true;
+                textBox4.Text = "";
+                textBox5.Text = "";
             }
             else
             {
                 textBox6.Enabled = false;
+                textBox6.Text = "";
             }
         }
 
@@ -189,7 +201,7 @@ namespace ElectroCalc
                 units = int.Parse(textBox6.Text);
             }
             this.Close();
-            Form4 form4 = new Form4(text,noDays.ToString(),units.ToString());
+            totalCharge form4 = new totalCharge(text,noDays.ToString(),units.ToString());
             form4.Show();
         }
     }
