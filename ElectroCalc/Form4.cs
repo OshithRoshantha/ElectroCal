@@ -50,7 +50,7 @@ namespace ElectroCalc
             int allocateForP3 = 1 * days;
             int allocateForP4 = 2 * days;
 
-            double kWhPerMonth = (usedUnits / days) * 30;
+            double kWhPerMonth = ((double)usedUnits / days) * 30;
 
             if (kWhPerMonth <= 60)
             {
@@ -149,7 +149,7 @@ namespace ElectroCalc
 
         public void getTaxCharge(double unitCharge, double fixedCharge)
         {
-            taxCharge.Text = (((unitCharge + fixedCharge) / 100) * 2.5643).ToString("F2");
+            taxCharge.Text = (((double)(unitCharge + fixedCharge) / 100) * 2.5643).ToString("F2");
             getTotalBill(unitCharge, fixedCharge, (((unitCharge + fixedCharge) / 100) * 2.5643));
         }
 

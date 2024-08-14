@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ElectroCalc
 {
@@ -31,6 +34,12 @@ namespace ElectroCalc
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string email = textBox4.Text;
+            string userName = textBox1.Text;
+            string userPassword = textBox3.Text;
+            string userNIC = textBox2.Text;
+
+
             Form1 form1 = new Form1();
             form1.Show();
             this.Close();
