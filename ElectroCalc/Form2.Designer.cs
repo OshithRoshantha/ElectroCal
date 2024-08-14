@@ -46,6 +46,7 @@
             sqlDataAdapter1 = new Microsoft.Data.SqlClient.SqlDataAdapter();
             label8 = new Label();
             label9 = new Label();
+            label10 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -226,6 +227,19 @@
             label9.Text = "*Please complete all fields and try again.";
             label9.Visible = false;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.Transparent;
+            label10.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.Maroon;
+            label10.Location = new Point(69, 416);
+            label10.Name = "label10";
+            label10.Size = new Size(236, 17);
+            label10.TabIndex = 41;
+            label10.Text = "*Email already exists. Please use login";
+            label10.Visible = false;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -233,6 +247,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
+            Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(button2);
@@ -276,5 +291,6 @@
         private Microsoft.Data.SqlClient.SqlDataAdapter sqlDataAdapter1;
         private Label label8;
         private Label label9;
+        private Label label10;
     }
 }

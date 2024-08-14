@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace ElectroCalc
 {
     public partial class Form2 : Form
     {
+
+        string connectionString = "Data Source=OSHITH-PC\\SQLEXPRESS;Initial Catalog=ElectroCal;Integrated Security=True;TrustServerCertificate=True";
         public Form2()
         {
             InitializeComponent();
@@ -54,6 +57,15 @@ namespace ElectroCalc
             {
                 label9.Visible = false;
             }
+            if (checkEmailExist(textBox4.Text))
+            {
+                isFormValid = false;
+                label10.Visible = true;
+            }
+            else
+            {
+                label10.Visible = false;
+            }
 
             if (isFormValid)
             {
@@ -61,8 +73,6 @@ namespace ElectroCalc
                 string userName = textBox1.Text;
                 string userPassword = textBox3.Text;
                 string userNIC = textBox2.Text;
-
-                string connectionString = "Data Source=OSHITH-PC\\SQLEXPRESS;Initial Catalog=ElectroCal;Integrated Security=True;TrustServerCertificate=True";
 
                 string query = "INSERT INTO userInfo (userEmail, userName, userPassword, userNIC) VALUES (@Email, @UserName, @UserPassword, @UserNIC)";
 
@@ -84,6 +94,24 @@ namespace ElectroCalc
                 Form1 form1 = new Form1();
                 form1.Show();
                 this.Close();
+            }
+        }
+
+        public Boolean checkEmailExist(string email)
+        {
+            string checkQuery = "SELECT COUNT(*) FROM userInfo WHERE userEmail = @Email";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(checkQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Email", email);
+
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
             }
         }
 
