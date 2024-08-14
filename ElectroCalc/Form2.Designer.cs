@@ -43,6 +43,7 @@
             textBox5 = new TextBox();
             label7 = new Label();
             button2 = new Button();
+            sqlDataAdapter1 = new Microsoft.Data.SqlClient.SqlDataAdapter();
             SuspendLayout();
             // 
             // button1
@@ -194,6 +195,10 @@
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
+            // sqlDataAdapter1
+            // 
+            sqlDataAdapter1.RowUpdated += sqlDataAdapter1_RowUpdated;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -239,5 +244,6 @@
         private TextBox textBox5;
         private Label label7;
         private Button button2;
+        private Microsoft.Data.SqlClient.SqlDataAdapter sqlDataAdapter1;
     }
 }

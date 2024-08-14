@@ -44,5 +44,10 @@ namespace ElectroCalc
             form1.Show();
             this.Close();
         }
+
+        private void sqlDataAdapter1_RowUpdated(object sender, SqlRowUpdatedEventArgs e)
+        {
+
+        }
     }
 }
