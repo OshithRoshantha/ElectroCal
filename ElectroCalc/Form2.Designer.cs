@@ -44,6 +44,8 @@
             label7 = new Label();
             button2 = new Button();
             sqlDataAdapter1 = new Microsoft.Data.SqlClient.SqlDataAdapter();
+            label8 = new Label();
+            label9 = new Label();
             SuspendLayout();
             // 
             // button1
@@ -65,7 +67,7 @@
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold);
-            label2.Location = new Point(98, 141);
+            label2.Location = new Point(98, 124);
             label2.Name = "label2";
             label2.Size = new Size(239, 41);
             label2.TabIndex = 24;
@@ -76,7 +78,6 @@
             textBox2.Font = new Font("Segoe UI", 12F);
             textBox2.Location = new Point(71, 304);
             textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '•';
             textBox2.Size = new Size(296, 34);
             textBox2.TabIndex = 30;
             // 
@@ -113,7 +114,7 @@
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 12F);
-            textBox3.Location = new Point(71, 470);
+            textBox3.Location = new Point(71, 466);
             textBox3.Name = "textBox3";
             textBox3.PasswordChar = '•';
             textBox3.Size = new Size(296, 34);
@@ -132,7 +133,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(71, 439);
+            label1.Location = new Point(71, 435);
             label1.Name = "label1";
             label1.Size = new Size(80, 23);
             label1.TabIndex = 32;
@@ -164,7 +165,7 @@
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 12F);
-            textBox5.Location = new Point(70, 544);
+            textBox5.Location = new Point(70, 532);
             textBox5.Name = "textBox5";
             textBox5.PasswordChar = '•';
             textBox5.Size = new Size(296, 34);
@@ -175,7 +176,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(70, 513);
+            label7.Location = new Point(70, 501);
             label7.Name = "label7";
             label7.Size = new Size(139, 23);
             label7.TabIndex = 36;
@@ -199,6 +200,32 @@
             // 
             sqlDataAdapter1.RowUpdated += sqlDataAdapter1_RowUpdated;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.ForeColor = Color.Maroon;
+            label8.Location = new Point(68, 567);
+            label8.Name = "label8";
+            label8.Size = new Size(276, 34);
+            label8.TabIndex = 39;
+            label8.Text = "*The passwords you entered do not match. \r\nPlease try again.";
+            label8.Visible = false;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.Maroon;
+            label9.Location = new Point(68, 181);
+            label9.Name = "label9";
+            label9.Size = new Size(253, 17);
+            label9.TabIndex = 40;
+            label9.Text = "*Please complete all fields and try again.";
+            label9.Visible = false;
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -206,6 +233,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
+            Controls.Add(label9);
+            Controls.Add(label8);
             Controls.Add(button2);
             Controls.Add(textBox5);
             Controls.Add(label7);
@@ -245,5 +274,7 @@
         private Label label7;
         private Button button2;
         private Microsoft.Data.SqlClient.SqlDataAdapter sqlDataAdapter1;
+        private Label label8;
+        private Label label9;
     }
 }
