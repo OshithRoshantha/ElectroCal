@@ -65,3 +65,4 @@ D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\bin\Debug\
 D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Runtime.Caching.dll
 D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroCalc.csproj.AssemblyReference.cache
 D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\obj\Debug\net8.0-windows\ElectroC.F4C60520.Up2Date
+D:\academic\LEVEL III\VisualBasic\ELECBillCal\ElectroCalc\ElectroCalc\bin\Debug\net8.0-windows\BCrypt.Net-Next.dll

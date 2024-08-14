@@ -77,7 +77,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 12F);
-            textBox2.Location = new Point(71, 304);
+            textBox2.Location = new Point(71, 298);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(296, 34);
             textBox2.TabIndex = 30;
@@ -95,7 +95,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(71, 273);
+            label5.Location = new Point(71, 270);
             label5.Name = "label5";
             label5.Size = new Size(178, 23);
             label5.TabIndex = 26;
@@ -108,14 +108,14 @@
             label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label4.Location = new Point(67, 197);
             label4.Name = "label4";
-            label4.Size = new Size(147, 23);
+            label4.Size = new Size(56, 23);
             label4.TabIndex = 25;
-            label4.Text = "Name with Initials";
+            label4.Text = "Name";
             // 
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 12F);
-            textBox3.Location = new Point(71, 466);
+            textBox3.Location = new Point(71, 456);
             textBox3.Name = "textBox3";
             textBox3.PasswordChar = '•';
             textBox3.Size = new Size(296, 34);
@@ -124,7 +124,7 @@
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 12F);
-            textBox4.Location = new Point(71, 379);
+            textBox4.Location = new Point(71, 369);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(296, 34);
             textBox4.TabIndex = 33;
@@ -134,7 +134,7 @@
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(71, 435);
+            label1.Location = new Point(67, 427);
             label1.Name = "label1";
             label1.Size = new Size(80, 23);
             label1.TabIndex = 32;
@@ -145,7 +145,7 @@
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(67, 348);
+            label3.Location = new Point(67, 338);
             label3.Name = "label3";
             label3.Size = new Size(51, 23);
             label3.TabIndex = 31;
@@ -157,7 +157,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI Light", 7F);
             label6.ForeColor = SystemColors.ActiveCaptionText;
-            label6.Location = new Point(70, 416);
+            label6.Location = new Point(70, 406);
             label6.Name = "label6";
             label6.Size = new Size(191, 15);
             label6.TabIndex = 35;
@@ -166,7 +166,7 @@
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 12F);
-            textBox5.Location = new Point(70, 532);
+            textBox5.Location = new Point(70, 522);
             textBox5.Name = "textBox5";
             textBox5.PasswordChar = '•';
             textBox5.Size = new Size(296, 34);
@@ -177,7 +177,7 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(70, 501);
+            label7.Location = new Point(67, 494);
             label7.Name = "label7";
             label7.Size = new Size(139, 23);
             label7.TabIndex = 36;
@@ -205,24 +205,24 @@
             // 
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
-            label8.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label8.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold);
             label8.ForeColor = Color.Maroon;
-            label8.Location = new Point(68, 567);
+            label8.Location = new Point(67, 556);
             label8.Name = "label8";
-            label8.Size = new Size(276, 34);
+            label8.Size = new Size(274, 38);
             label8.TabIndex = 39;
-            label8.Text = "*The passwords you entered do not match. \r\nPlease try again.";
+            label8.Text = "The passwords you entered do not match. \r\nPlease try again.";
             label8.Visible = false;
             // 
             // label9
             // 
             label9.AutoSize = true;
             label9.BackColor = Color.Transparent;
-            label9.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold);
             label9.ForeColor = Color.Maroon;
             label9.Location = new Point(68, 181);
             label9.Name = "label9";
-            label9.Size = new Size(253, 17);
+            label9.Size = new Size(263, 19);
             label9.TabIndex = 40;
             label9.Text = "*Please complete all fields and try again.";
             label9.Visible = false;
@@ -231,13 +231,13 @@
             // 
             label10.AutoSize = true;
             label10.BackColor = Color.Transparent;
-            label10.Font = new Font("Segoe UI Semibold", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold);
             label10.ForeColor = Color.Maroon;
-            label10.Location = new Point(69, 416);
+            label10.Location = new Point(69, 406);
             label10.Name = "label10";
-            label10.Size = new Size(236, 17);
+            label10.Size = new Size(241, 19);
             label10.TabIndex = 41;
-            label10.Text = "*Email already exists. Please use login";
+            label10.Text = "Email already exists. Please use login.";
             label10.Visible = false;
             // 
             // Form2

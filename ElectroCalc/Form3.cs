@@ -12,12 +12,26 @@ namespace ElectroCalc
 {
     public partial class Form3 : Form
     {
-        public Form3()
+        string formatedUserName;
+        public Form3(string name)
         {
             InitializeComponent();
             radioButton1.Checked = true;
             radioButton4.Checked = true;
             textBox6.Enabled = false;
+            formatedUserName= formatName(name);
+            userName.Text = formatedUserName;
+        }
+
+        public string formatName(string fullName)
+        {
+            var nameParts = fullName.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            if (nameParts.Length > 0)
+            {
+                var firstName = nameParts[0];
+                return char.ToUpper(firstName[0]) + firstName.Substring(1).ToLower();
+            }
+            return fullName;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -201,7 +215,7 @@ namespace ElectroCalc
                 units = int.Parse(textBox6.Text);
             }
             this.Close();
-            totalCharge form4 = new totalCharge(text,noDays.ToString(),units.ToString());
+            totalCharge form4 = new totalCharge(text,noDays.ToString(),units.ToString(), formatedUserName);
             form4.Show();
         }
     }

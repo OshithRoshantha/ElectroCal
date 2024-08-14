@@ -39,6 +39,8 @@
             textBox2 = new TextBox();
             label1 = new Label();
             label2 = new Label();
+            label9 = new Label();
+            label3 = new Label();
             SuspendLayout();
             // 
             // label4
@@ -46,7 +48,7 @@
             label4.AutoSize = true;
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(68, 332);
+            label4.Location = new Point(68, 321);
             label4.Name = "label4";
             label4.Size = new Size(87, 23);
             label4.TabIndex = 3;
@@ -57,7 +59,7 @@
             label5.AutoSize = true;
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(72, 431);
+            label5.Location = new Point(72, 435);
             label5.Name = "label5";
             label5.Size = new Size(80, 23);
             label5.TabIndex = 4;
@@ -69,7 +71,7 @@
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI Light", 7F);
             label6.ForeColor = SystemColors.ActiveCaptionText;
-            label6.Location = new Point(72, 403);
+            label6.Location = new Point(72, 391);
             label6.Name = "label6";
             label6.Size = new Size(177, 15);
             label6.TabIndex = 5;
@@ -118,7 +120,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(72, 364);
+            textBox1.Location = new Point(72, 350);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(296, 34);
             textBox1.TabIndex = 9;
@@ -155,6 +157,32 @@
             label2.TabIndex = 12;
             label2.Text = "Enter your details below";
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.BackColor = Color.Transparent;
+            label9.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label9.ForeColor = Color.Maroon;
+            label9.Location = new Point(69, 504);
+            label9.Name = "label9";
+            label9.Size = new Size(259, 20);
+            label9.TabIndex = 41;
+            label9.Text = "Incorrect password. Please try again.";
+            label9.Visible = false;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold);
+            label3.ForeColor = Color.Maroon;
+            label3.Location = new Point(72, 387);
+            label3.Name = "label3";
+            label3.Size = new Size(258, 40);
+            label3.TabIndex = 42;
+            label3.Text = "Couldn't find your Account. \r\nPlease signup to create new Account";
+            label3.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -162,6 +190,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
+            Controls.Add(label3);
+            Controls.Add(label9);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(textBox2);
@@ -192,5 +222,7 @@
         private TextBox textBox2;
         private Label label1;
         private Label label2;
+        private Label label9;
+        private Label label3;
     }
 }

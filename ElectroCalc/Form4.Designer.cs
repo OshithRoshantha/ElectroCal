@@ -47,7 +47,6 @@
             taxCharge = new Label();
             label7 = new Label();
             totalBill = new Label();
-            button1 = new Button();
             button2 = new Button();
             SuspendLayout();
             // 
@@ -246,27 +245,13 @@
             totalBill.Size = new Size(8, 28);
             totalBill.TabIndex = 17;
             // 
-            // button1
-            // 
-            button1.BackColor = Color.FromArgb(25, 164, 212);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
-            button1.ForeColor = SystemColors.ButtonHighlight;
-            button1.Location = new Point(91, 631);
-            button1.Name = "button1";
-            button1.Size = new Size(115, 39);
-            button1.TabIndex = 18;
-            button1.Text = "Save";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
             // button2
             // 
             button2.BackColor = Color.FromArgb(149, 36, 75);
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(225, 631);
+            button2.Location = new Point(155, 632);
             button2.Name = "button2";
             button2.Size = new Size(115, 39);
             button2.TabIndex = 19;
@@ -282,7 +267,6 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
             Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(totalBill);
             Controls.Add(label7);
             Controls.Add(taxCharge);
@@ -330,7 +314,6 @@
         private Label taxCharge;
         private Label label7;
         private Label totalBill;
-        private Button button1;
         private Button button2;
     }
 }

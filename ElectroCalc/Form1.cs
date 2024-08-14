@@ -1,7 +1,14 @@
+using Microsoft.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using BCrypt.Net;
+
 namespace ElectroCalc
 {
     public partial class Form1 : Form
     {
+        string connectionString = "Data Source=OSHITH-PC\\SQLEXPRESS;Initial Catalog=ElectroCal;Integrated Security=True;TrustServerCertificate=True";
+
+        string userName;
         public Form1()
         {
             InitializeComponent();
@@ -16,12 +23,91 @@ namespace ElectroCalc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (1 == 1) //credentials correct
+            string emailInput = textBox1.Text;
+            string passwordInput= textBox2.Text;
+
+            if (emailInput != "" && passwordInput != "")
             {
-                Form3 form3 = new Form3();
-                form3.Show();
-                this.Hide();
+
+                if (checkEmailExist(emailInput))
+                {
+                    label3.Visible = false;
+                    if (userAuthentication(emailInput, passwordInput))
+                    {
+                        label9.Visible = false;
+                        userName = GetUserNameByEmail(emailInput);
+                        Form3 form3 = new Form3(userName);
+                        form3.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        label9.Visible = true;
+                    }
+                }
+                else
+                {
+                    label3.Visible = true;
+
+                }
             }
         }
+
+        public Boolean userAuthentication(string email, string password)
+        {
+            string checkQuery = "SELECT userPassword FROM userInfo WHERE userEmail = @Email";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(checkQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    string storedHashedPassword = (string)cmd.ExecuteScalar();
+
+                    bool isPasswordCorrect = storedHashedPassword != null && BCrypt.Net.BCrypt.Verify(password, storedHashedPassword);
+
+                    return isPasswordCorrect;
+                }
+            }
+        }
+
+        public Boolean checkEmailExist(string email)
+        {
+            string checkQuery = "SELECT COUNT(*) FROM userInfo WHERE userEmail = @Email";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(checkQuery, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Email", email);
+
+                    int count = (int)cmd.ExecuteScalar();
+                    return count > 0;
+                }
+            }
+        }
+
+        public string GetUserNameByEmail(string email)
+        {
+            string query = "SELECT userName FROM userInfo WHERE userEmail = @Email";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    object result = cmd.ExecuteScalar();
+                    return result?.ToString(); 
+                }
+            }
+        }
+
+
     }
 }

@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using BCrypt.Net;
 
 namespace ElectroCalc
 {
@@ -74,6 +75,8 @@ namespace ElectroCalc
                 string userPassword = textBox3.Text;
                 string userNIC = textBox2.Text;
 
+                string hashedPassword = BCrypt.Net.BCrypt.HashPassword(userPassword);
+
                 string query = "INSERT INTO userInfo (userEmail, userName, userPassword, userNIC) VALUES (@Email, @UserName, @UserPassword, @UserNIC)";
 
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -84,7 +87,7 @@ namespace ElectroCalc
                     {
                         cmd.Parameters.AddWithValue("@Email", email);
                         cmd.Parameters.AddWithValue("@UserName", userName);
-                        cmd.Parameters.AddWithValue("@UserPassword", userPassword);
+                        cmd.Parameters.AddWithValue("@UserPassword", hashedPassword);
                         cmd.Parameters.AddWithValue("@UserNIC", userNIC);
 
                         cmd.ExecuteNonQuery();

@@ -16,13 +16,15 @@ namespace ElectroCalc
         String dateChange;
         String daysDiff;
         String noUnits;
+        string formatedUserName;
 
-        public totalCharge(string dateChange, string daysDiff, string noUnits)
+        public totalCharge(string dateChange, string daysDiff, string noUnits,string formatedUserName)
         {
             InitializeComponent();
             this.dateChange = dateChange;
             this.daysDiff = daysDiff;
             this.noUnits = noUnits;
+            this.formatedUserName = formatedUserName;
             datePeriod.Text = dateChange;
             days.Text = daysDiff + " Days";
             showBreakDown();
@@ -164,14 +166,14 @@ namespace ElectroCalc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 form3_1 = new Form3();
+            Form3 form3_1 = new Form3(formatedUserName);
             form3_1.Show();
             this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 form3_1 = new Form3();
+            Form3 form3_1 = new Form3(formatedUserName);
             form3_1.Show();
             this.Close();
         }
