@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ElectroCalc")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3a9237990b97ecb63a56df30034d806ee6b5c1d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af8e153ae7b59a3b0d3774d1f340330622e9bd65")]
 [assembly: System.Reflection.AssemblyProductAttribute("ElectroCalc")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ElectroCalc")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

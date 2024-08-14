@@ -121,11 +121,11 @@ namespace ElectroCalc
 
             if (monthlyUnits <= 30)
             {
-                fixedCharge = 100;
+                fixedCharge = 100 * ((double)days / 30);
             }
             else if (monthlyUnits <= 60)
             {
-                fixedCharge = 250;
+                fixedCharge = 250 * ((double)days / 30);
             }
             else if (monthlyUnits <= 90)
             {
@@ -143,7 +143,6 @@ namespace ElectroCalc
             {
                 fixedCharge = 2000;
             }
-            fixedCharge=fixedCharge*((double)days / 30);
             fixedCha.Text = fixedCharge.ToString("F2");
             getTaxCharge(unitCharge, fixedCharge);
         }
