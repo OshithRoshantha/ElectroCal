@@ -56,6 +56,7 @@
             radioButton2 = new RadioButton();
             radioButton1 = new RadioButton();
             panel1 = new Panel();
+            button4 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,7 +66,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             label2.ForeColor = Color.FromArgb(212, 188, 12);
-            label2.Location = new Point(43, 40);
+            label2.Location = new Point(43, 25);
             label2.Name = "label2";
             label2.Size = new Size(127, 23);
             label2.TabIndex = 25;
@@ -125,7 +126,7 @@
             userName.BackColor = Color.Transparent;
             userName.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
             userName.ForeColor = Color.FromArgb(212, 188, 12);
-            userName.Location = new Point(40, 59);
+            userName.Location = new Point(40, 43);
             userName.Name = "userName";
             userName.Size = new Size(106, 35);
             userName.TabIndex = 31;
@@ -361,6 +362,20 @@
             panel1.Size = new Size(250, 27);
             panel1.TabIndex = 60;
             // 
+            // button4
+            // 
+            button4.BackColor = Color.FromArgb(149, 36, 75);
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.Font = new Font("Segoe UI Semibold", 5F, FontStyle.Bold);
+            button4.ForeColor = Color.FromArgb(212, 188, 12);
+            button4.Location = new Point(45, 78);
+            button4.Name = "button4";
+            button4.Size = new Size(85, 25);
+            button4.TabIndex = 62;
+            button4.Text = "Log Out";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -368,6 +383,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
+            Controls.Add(button4);
             Controls.Add(panel1);
             Controls.Add(textBox4);
             Controls.Add(textBox5);
@@ -433,5 +449,6 @@
         private RadioButton radioButton2;
         private RadioButton radioButton1;
         private Panel panel1;
+        private Button button4;
     }
 }

@@ -19,7 +19,7 @@ namespace ElectroCalc
             radioButton1.Checked = true;
             radioButton4.Checked = true;
             textBox6.Enabled = false;
-            formatedUserName= formatName(name);
+            formatedUserName = formatName(name);
             userName.Text = formatedUserName;
         }
 
@@ -175,7 +175,7 @@ namespace ElectroCalc
                 e.Handled = true;
             }
         }
-        
+
         public int getDays()
         {
             DateTime date1 = DateTime.Parse(textBox2.Text);
@@ -190,14 +190,14 @@ namespace ElectroCalc
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int noDays=0, units=0;
-            String text="";
-            if (textBox1.Text==""&& textBox2.Text != "" && textBox3.Text != "")
+            int noDays = 0, units = 0;
+            String text = "";
+            if (textBox1.Text == "" && textBox2.Text != "" && textBox3.Text != "")
             {
-                noDays= getDays();
+                noDays = getDays();
                 text = textBox2.Text + " - " + textBox3.Text;
             }
-            if(textBox2.Text==""&& textBox3.Text == ""&& textBox1.Text != "")
+            if (textBox2.Text == "" && textBox3.Text == "" && textBox1.Text != "")
             {
                 noDays = int.Parse(textBox1.Text);
                 DateTime currentDate = DateTime.Now;
@@ -210,13 +210,20 @@ namespace ElectroCalc
             {
                 units = getUnits();
             }
-            if (textBox5.Text == "" && textBox4.Text == ""&& textBox6.Text != "")
+            if (textBox5.Text == "" && textBox4.Text == "" && textBox6.Text != "")
             {
                 units = int.Parse(textBox6.Text);
             }
             this.Close();
-            totalCharge form4 = new totalCharge(text,noDays.ToString(),units.ToString(), formatedUserName);
+            totalCharge form4 = new totalCharge(text, noDays.ToString(), units.ToString(), formatedUserName);
             form4.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.Show();
+            this.Close();
         }
     }
 }
