@@ -94,7 +94,7 @@ namespace ElectroCalc
                     charge = usedUnits * 6.00;
                     unit1.Text = "6.00 * " + usedUnits + " = " + charge.ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
-                    chargeOnUnits = charge.ToString();
+                    chargeOnUnits = charge.ToString("F2");
                 }
                 else
                 {
@@ -102,7 +102,7 @@ namespace ElectroCalc
                     unit1.Text = "6.00 * " + days + " = " + (days * 6.00).ToString("F2");
                     unit2.Text = "9.00 * " + (usedUnits - days) + " = " + ((usedUnits - days) * 9.00).ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
-                    chargeOnUnits = charge.ToString();
+                    chargeOnUnits = charge.ToString("F2");
                 }
             }
             else
@@ -111,7 +111,7 @@ namespace ElectroCalc
                 {
                     charge = usedUnits * unitP1;
                     unit1.Text = "15.00 * " + usedUnits + " = " + charge.ToString("F2");
-                    chargeOnUnits = charge.ToString();
+                    chargeOnUnits = charge.ToString("F2");
                 }
                 else if (usedUnits <= (allocateForP1 + allocateForP2))
                 {
@@ -119,7 +119,7 @@ namespace ElectroCalc
                     unit1.Text = "15.00 * " + allocateForP1 + " = " + (allocateForP1 * unitP1).ToString("F2");
                     unit2.Text = "18.00 * " + (usedUnits - allocateForP1) + " = " + ((usedUnits - allocateForP1) * unitP2).ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
-                    chargeOnUnits = charge.ToString();
+                    chargeOnUnits = charge.ToString("F2");
                 }
                 else if (usedUnits <= (allocateForP1 + allocateForP2 + allocateForP3))
                 {
@@ -128,7 +128,7 @@ namespace ElectroCalc
                     unit2.Text = "18.00 * " + allocateForP2 + " = " + (allocateForP2 * unitP2).ToString("F2");
                     unit3.Text = "30.00 * " + (usedUnits - (allocateForP1 + allocateForP2)) + " = " + ((usedUnits - (allocateForP1 + allocateForP2)) * unitP3).ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
-                    chargeOnUnits = charge.ToString();
+                    chargeOnUnits = charge.ToString("F2");
                 }
                 else if (usedUnits <= (allocateForP1 + allocateForP2 + allocateForP3 + allocateForP4))
                 {
@@ -138,7 +138,7 @@ namespace ElectroCalc
                     unit3.Text = "30.00 * " + allocateForP3 + " = " + (allocateForP3 * unitP3).ToString("F2");
                     unit4.Text = "42.00 * " + (usedUnits - (allocateForP1 + allocateForP2 + allocateForP3)) + " = " + ((usedUnits - (allocateForP1 + allocateForP2 + allocateForP3)) * unitP4).ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
-                    chargeOnUnits = charge.ToString();
+                    chargeOnUnits = charge.ToString("F2");
                 }
                 else
                 {
@@ -149,7 +149,7 @@ namespace ElectroCalc
                     unit4.Text = "42.00 * " + allocateForP4 + " = " + (allocateForP4 * unitP4).ToString("F2");
                     unit5.Text = "65.00 * " + (usedUnits - (allocateForP1 + allocateForP2 + allocateForP3 + allocateForP4)) + " = " + ((usedUnits - (allocateForP1 + allocateForP2 + allocateForP3 + allocateForP4)) * unitP5).ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
-                    chargeOnUnits = charge.ToString();
+                    chargeOnUnits = charge.ToString("F2");
                 }
             }
             netCharge.Text = charge.ToString("F2");
