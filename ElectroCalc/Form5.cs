@@ -28,9 +28,6 @@ namespace ElectroCalc
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("@userEmail", email);
-
-                try
-                {
                     connection.Open();
                     SqlDataReader reader = command.ExecuteReader();
 
@@ -66,7 +63,7 @@ namespace ElectroCalc
                                         clonedLabel.Text = reader["billDuration"].ToString();
                                         break;
                                     case "units":
-                                        clonedLabel.Text = reader["noUnits"].ToString();
+                                        clonedLabel.Text = reader["noUnits"].ToString() + " kWh";
                                         break;
                                     case "bill":
                                         clonedLabel.Text = reader["billAmount"].ToString();
@@ -79,18 +76,13 @@ namespace ElectroCalc
                             }
                         }
                         yOffset += clonedPanel.Height + 15;
-                        scrollablePanel.Controls.Add(clonedPanel);
+                        this.Controls.Add(clonedPanel); 
                     }
 
                     reader.Close();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("An error occurred: " + ex.Message);
-                }
+                
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             Form3 form3 = new Form3(name, email);

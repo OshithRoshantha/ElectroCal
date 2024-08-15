@@ -41,7 +41,6 @@
             label3 = new Label();
             label2 = new Label();
             button1 = new Button();
-            scrollablePanel = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -91,41 +90,45 @@
             // 
             bill.AutoSize = true;
             bill.BackColor = Color.Transparent;
-            bill.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold);
+            bill.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bill.Location = new Point(192, 94);
             bill.Name = "bill";
-            bill.Size = new Size(0, 19);
+            bill.Size = new Size(67, 16);
             bill.TabIndex = 40;
+            bill.Text = "10000.00";
             // 
             // chargeOnUnits
             // 
             chargeOnUnits.AutoSize = true;
             chargeOnUnits.BackColor = Color.Transparent;
-            chargeOnUnits.Font = new Font("Segoe UI", 8F);
+            chargeOnUnits.Font = new Font("Microsoft Sans Serif", 8.25F);
             chargeOnUnits.Location = new Point(192, 63);
             chargeOnUnits.Name = "chargeOnUnits";
-            chargeOnUnits.Size = new Size(0, 19);
+            chargeOnUnits.Size = new Size(68, 17);
             chargeOnUnits.TabIndex = 39;
+            chargeOnUnits.Text = "10000.00";
             // 
             // units
             // 
             units.AutoSize = true;
             units.BackColor = Color.Transparent;
-            units.Font = new Font("Segoe UI Semibold", 8F, FontStyle.Bold);
-            units.Location = new Point(192, 29);
+            units.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            units.Location = new Point(192, 30);
             units.Name = "units";
-            units.Size = new Size(0, 19);
+            units.Size = new Size(65, 16);
             units.TabIndex = 38;
+            units.Text = "1000 kWh";
             // 
             // dateDuration
             // 
             dateDuration.AutoSize = true;
             dateDuration.BackColor = Color.Transparent;
-            dateDuration.Font = new Font("Segoe UI", 8F);
-            dateDuration.Location = new Point(192, 12);
+            dateDuration.Font = new Font("Microsoft Sans Serif", 8.25F);
+            dateDuration.Location = new Point(192, 13);
             dateDuration.Name = "dateDuration";
-            dateDuration.Size = new Size(0, 19);
+            dateDuration.Size = new Size(165, 17);
             dateDuration.TabIndex = 34;
+            dateDuration.Text = "15/07/2024 - 15/08/2024";
             // 
             // label4
             // 
@@ -155,11 +158,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Font = new Font("Microsoft Sans Serif", 8.25F);
             label3.ForeColor = Color.FromArgb(70, 121, 213);
             label3.Location = new Point(20, 61);
             label3.Name = "label3";
-            label3.Size = new Size(154, 20);
+            label3.Size = new Size(145, 17);
             label3.TabIndex = 35;
             label3.Text = "Charge on Units /LKR";
             // 
@@ -189,16 +192,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // scrollablePanel
-            // 
-            scrollablePanel.AutoScroll = true;
-            scrollablePanel.BackColor = Color.Transparent;
-            scrollablePanel.Dock = DockStyle.Fill;
-            scrollablePanel.Location = new Point(0, 0);
-            scrollablePanel.Name = "scrollablePanel";
-            scrollablePanel.Size = new Size(432, 703);
-            scrollablePanel.TabIndex = 43;
-            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -206,7 +199,6 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
-            Controls.Add(scrollablePanel);
             Controls.Add(button1);
             Controls.Add(panel1);
             Controls.Add(userName);
@@ -236,6 +228,5 @@
         private Label chargeOnUnits;
         private Label bill;
         private Button button1;
-        private Panel scrollablePanel;
     }
 }
