@@ -90,10 +90,10 @@
             // 
             bill.AutoSize = true;
             bill.BackColor = Color.Transparent;
-            bill.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            bill.Location = new Point(192, 94);
+            bill.Font = new Font("Microsoft Sans Serif", 9F, FontStyle.Bold);
+            bill.Location = new Point(192, 96);
             bill.Name = "bill";
-            bill.Size = new Size(67, 16);
+            bill.Size = new Size(76, 18);
             bill.TabIndex = 40;
             bill.Text = "10000.00";
             // 
@@ -113,7 +113,7 @@
             units.AutoSize = true;
             units.BackColor = Color.Transparent;
             units.Font = new Font("Microsoft Sans Serif", 7.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            units.Location = new Point(192, 30);
+            units.Location = new Point(192, 34);
             units.Name = "units";
             units.Size = new Size(65, 16);
             units.TabIndex = 38;
