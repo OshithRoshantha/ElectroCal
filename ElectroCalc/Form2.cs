@@ -18,6 +18,7 @@ namespace ElectroCalc
     public partial class Form2 : Form
     {
 
+        string email = "";
         string connectionString = "Data Source=OSHITH-PC\\SQLEXPRESS;Initial Catalog=ElectroCal;Integrated Security=True;TrustServerCertificate=True";
         public Form2()
         {
@@ -70,7 +71,7 @@ namespace ElectroCalc
 
             if (isFormValid)
             {
-                string email = textBox4.Text;
+                email = textBox4.Text;
                 string userName = textBox1.Text;
                 string userPassword = textBox3.Text;
                 string userNIC = textBox2.Text;

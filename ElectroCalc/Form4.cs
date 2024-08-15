@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,6 +9,8 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace ElectroCalc
 {
@@ -16,27 +19,56 @@ namespace ElectroCalc
         String dateChange;
         String daysDiff;
         String noUnits;
+        string email;
         string formatedUserName;
+        string chargeOnUnits;
+        string billAmounts;
 
-        public totalCharge(string dateChange, string daysDiff, string noUnits,string formatedUserName)
+        string connectionString = "Data Source=OSHITH-PC\\SQLEXPRESS;Initial Catalog=ElectroCal;Integrated Security=True;TrustServerCertificate=True";
+
+        public totalCharge(string dateChange, string daysDiff, string noUnits, string formatedUserName,string email)
         {
             InitializeComponent();
             this.dateChange = dateChange;
             this.daysDiff = daysDiff;
             this.noUnits = noUnits;
             this.formatedUserName = formatedUserName;
+            this.email = email;
             datePeriod.Text = dateChange;
             days.Text = daysDiff + " Days";
-            showBreakDown();
+            chargeOnUnits=showBreakDown();
+            saveToHistory();
+        }
+
+        public void saveToHistory()
+        {
+            string query = "INSERT INTO userBillHistory (userEmail, billDuration, noUnits, chargeOnUnits, billAmount, userName) VALUES (@userEmail ,@billDuration, @noUnits, @chargeOnUnits, @billAmount, @userName)";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@userEmail", email);
+                    cmd.Parameters.AddWithValue("@billDuration", dateChange);
+                    cmd.Parameters.AddWithValue("@noUnits", noUnits);
+                    cmd.Parameters.AddWithValue("@chargeOnUnits", chargeOnUnits);
+                    cmd.Parameters.AddWithValue("@billAmount", billAmounts);
+                    cmd.Parameters.AddWithValue("@userName", formatedUserName);
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
-        public void showBreakDown()
+        public string showBreakDown()
         {
             double charge = 0;
+            string chargeOnUnits = "";
 
             const double unitP1 = 15.00;
             const double unitP2 = 18.00;
@@ -62,6 +94,7 @@ namespace ElectroCalc
                     charge = usedUnits * 6.00;
                     unit1.Text = "6.00 * " + usedUnits + " = " + charge.ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
+                    chargeOnUnits = charge.ToString();
                 }
                 else
                 {
@@ -69,6 +102,7 @@ namespace ElectroCalc
                     unit1.Text = "6.00 * " + days + " = " + (days * 6.00).ToString("F2");
                     unit2.Text = "9.00 * " + (usedUnits - days) + " = " + ((usedUnits - days) * 9.00).ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
+                    chargeOnUnits = charge.ToString();
                 }
             }
             else
@@ -77,6 +111,7 @@ namespace ElectroCalc
                 {
                     charge = usedUnits * unitP1;
                     unit1.Text = "15.00 * " + usedUnits + " = " + charge.ToString("F2");
+                    chargeOnUnits = charge.ToString();
                 }
                 else if (usedUnits <= (allocateForP1 + allocateForP2))
                 {
@@ -84,6 +119,7 @@ namespace ElectroCalc
                     unit1.Text = "15.00 * " + allocateForP1 + " = " + (allocateForP1 * unitP1).ToString("F2");
                     unit2.Text = "18.00 * " + (usedUnits - allocateForP1) + " = " + ((usedUnits - allocateForP1) * unitP2).ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
+                    chargeOnUnits = charge.ToString();
                 }
                 else if (usedUnits <= (allocateForP1 + allocateForP2 + allocateForP3))
                 {
@@ -92,6 +128,7 @@ namespace ElectroCalc
                     unit2.Text = "18.00 * " + allocateForP2 + " = " + (allocateForP2 * unitP2).ToString("F2");
                     unit3.Text = "30.00 * " + (usedUnits - (allocateForP1 + allocateForP2)) + " = " + ((usedUnits - (allocateForP1 + allocateForP2)) * unitP3).ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
+                    chargeOnUnits = charge.ToString();
                 }
                 else if (usedUnits <= (allocateForP1 + allocateForP2 + allocateForP3 + allocateForP4))
                 {
@@ -101,6 +138,7 @@ namespace ElectroCalc
                     unit3.Text = "30.00 * " + allocateForP3 + " = " + (allocateForP3 * unitP3).ToString("F2");
                     unit4.Text = "42.00 * " + (usedUnits - (allocateForP1 + allocateForP2 + allocateForP3)) + " = " + ((usedUnits - (allocateForP1 + allocateForP2 + allocateForP3)) * unitP4).ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
+                    chargeOnUnits = charge.ToString();
                 }
                 else
                 {
@@ -111,9 +149,11 @@ namespace ElectroCalc
                     unit4.Text = "42.00 * " + allocateForP4 + " = " + (allocateForP4 * unitP4).ToString("F2");
                     unit5.Text = "65.00 * " + (usedUnits - (allocateForP1 + allocateForP2 + allocateForP3 + allocateForP4)) + " = " + ((usedUnits - (allocateForP1 + allocateForP2 + allocateForP3 + allocateForP4)) * unitP5).ToString("F2");
                     getFixedCharge(days, usedUnits, charge);
+                    chargeOnUnits = charge.ToString();
                 }
             }
             netCharge.Text = charge.ToString("F2");
+            return chargeOnUnits;
         }
 
         public void getFixedCharge(int days, int usedUnits, double unitCharge)
@@ -158,6 +198,7 @@ namespace ElectroCalc
         public void getTotalBill(double unitCharge, double fixedCharge, double taxCharge)
         {
             totalBill.Text = (unitCharge + fixedCharge + taxCharge).ToString("F2");
+            billAmounts= (unitCharge + fixedCharge + taxCharge).ToString("F2");
         }
         private void fixedCha_Click(object sender, EventArgs e)
         {
@@ -166,16 +207,21 @@ namespace ElectroCalc
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 form3_1 = new Form3(formatedUserName);
+            Form3 form3_1 = new Form3(formatedUserName, email);
             form3_1.Show();
             this.Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form3 form3_1 = new Form3(formatedUserName);
+            Form3 form3_1 = new Form3(formatedUserName, email);
             form3_1.Show();
             this.Close();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -13,11 +13,13 @@ namespace ElectroCalc
     public partial class Form3 : Form
     {
         string formatedUserName;
-        public Form3(string name)
+        string email;
+        public Form3(string name,string email)
         {
             InitializeComponent();
             radioButton1.Checked = true;
             radioButton4.Checked = true;
+            this.email = email;
             textBox6.Enabled = false;
             formatedUserName = formatName(name);
             userName.Text = formatedUserName;
@@ -215,7 +217,7 @@ namespace ElectroCalc
                 units = int.Parse(textBox6.Text);
             }
             this.Close();
-            totalCharge form4 = new totalCharge(text, noDays.ToString(), units.ToString(), formatedUserName);
+            totalCharge form4 = new totalCharge(text, noDays.ToString(), units.ToString(), formatedUserName,email);
             form4.Show();
         }
 

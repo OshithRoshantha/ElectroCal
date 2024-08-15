@@ -48,6 +48,7 @@
             label7 = new Label();
             totalBill = new Label();
             button2 = new Button();
+            button1 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -96,6 +97,7 @@
             label4.Size = new Size(176, 20);
             label4.TabIndex = 3;
             label4.Text = "Tariff Scheme: D-2024/07";
+            label4.Click += label4_Click;
             // 
             // datePeriod
             // 
@@ -251,13 +253,26 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(155, 632);
+            button2.Location = new Point(225, 629);
             button2.Name = "button2";
             button2.Size = new Size(115, 39);
             button2.TabIndex = 19;
             button2.Text = "Exit";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(70, 121, 204);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(92, 629);
+            button1.Name = "button1";
+            button1.Size = new Size(114, 39);
+            button1.TabIndex = 40;
+            button1.Text = "Bill History";
+            button1.UseVisualStyleBackColor = false;
             // 
             // totalCharge
             // 
@@ -266,6 +281,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
+            Controls.Add(button1);
             Controls.Add(button2);
             Controls.Add(totalBill);
             Controls.Add(label7);
@@ -315,5 +331,6 @@
         private Label label7;
         private Label totalBill;
         private Button button2;
+        private Button button1;
     }
 }
