@@ -26,7 +26,7 @@ namespace ElectroCalc
 
         string connectionString = "Data Source=OSHITH-PC\\SQLEXPRESS;Initial Catalog=ElectroCal;Integrated Security=True;TrustServerCertificate=True";
 
-        public totalCharge(string dateChange, string daysDiff, string noUnits, string formatedUserName,string email)
+        public totalCharge(string dateChange, string daysDiff, string noUnits, string formatedUserName, string email)
         {
             InitializeComponent();
             this.dateChange = dateChange;
@@ -36,7 +36,7 @@ namespace ElectroCalc
             this.email = email;
             datePeriod.Text = dateChange;
             days.Text = daysDiff + " Days";
-            chargeOnUnits=showBreakDown();
+            chargeOnUnits = showBreakDown();
             saveToHistory();
         }
 
@@ -198,7 +198,7 @@ namespace ElectroCalc
         public void getTotalBill(double unitCharge, double fixedCharge, double taxCharge)
         {
             totalBill.Text = (unitCharge + fixedCharge + taxCharge).ToString("F2");
-            billAmounts= (unitCharge + fixedCharge + taxCharge).ToString("F2");
+            billAmounts = (unitCharge + fixedCharge + taxCharge).ToString("F2");
         }
         private void fixedCha_Click(object sender, EventArgs e)
         {
@@ -222,6 +222,13 @@ namespace ElectroCalc
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5(formatedUserName, email);
+            form5.Show();
+            this.Close();
         }
     }
 }

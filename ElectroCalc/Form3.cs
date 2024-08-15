@@ -14,7 +14,7 @@ namespace ElectroCalc
     {
         string formatedUserName;
         string email;
-        public Form3(string name,string email)
+        public Form3(string name, string email)
         {
             InitializeComponent();
             radioButton1.Checked = true;
@@ -217,7 +217,7 @@ namespace ElectroCalc
                 units = int.Parse(textBox6.Text);
             }
             this.Close();
-            totalCharge form4 = new totalCharge(text, noDays.ToString(), units.ToString(), formatedUserName,email);
+            totalCharge form4 = new totalCharge(text, noDays.ToString(), units.ToString(), formatedUserName, email);
             form4.Show();
         }
 
@@ -225,6 +225,18 @@ namespace ElectroCalc
         {
             Form1 form1 = new Form1();
             form1.Show();
+            this.Close();
+        }
+
+        private void userName_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form5 form5 = new Form5(formatedUserName, email);
+            form5.Show();
             this.Close();
         }
     }

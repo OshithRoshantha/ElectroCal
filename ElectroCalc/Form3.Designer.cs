@@ -57,6 +57,7 @@
             radioButton1 = new RadioButton();
             panel1 = new Panel();
             button4 = new Button();
+            button3 = new Button();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -128,19 +129,19 @@
             userName.ForeColor = Color.FromArgb(212, 188, 12);
             userName.Location = new Point(40, 43);
             userName.Name = "userName";
-            userName.Size = new Size(106, 35);
+            userName.Size = new Size(0, 35);
             userName.TabIndex = 31;
-            userName.Text = "Gimhan";
+            userName.Click += userName_Click;
             // 
             // button2
             // 
-            button2.BackColor = Color.FromArgb(70, 121, 204);
+            button2.BackColor = Color.FromArgb(149, 36, 75);
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(56, 628);
+            button2.Location = new Point(48, 637);
             button2.Name = "button2";
-            button2.Size = new Size(151, 51);
+            button2.Size = new Size(112, 37);
             button2.TabIndex = 39;
             button2.Text = "Calculate";
             button2.UseVisualStyleBackColor = false;
@@ -152,9 +153,9 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(222, 628);
+            button1.Location = new Point(175, 637);
             button1.Name = "button1";
-            button1.Size = new Size(136, 51);
+            button1.Size = new Size(86, 37);
             button1.TabIndex = 40;
             button1.Text = "Clear";
             button1.UseVisualStyleBackColor = false;
@@ -376,6 +377,20 @@
             button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
+            // button3
+            // 
+            button3.BackColor = Color.FromArgb(70, 121, 204);
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold);
+            button3.ForeColor = SystemColors.ButtonHighlight;
+            button3.Location = new Point(274, 637);
+            button3.Name = "button3";
+            button3.Size = new Size(109, 37);
+            button3.TabIndex = 63;
+            button3.Text = "Bill History";
+            button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -383,6 +398,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
+            Controls.Add(button3);
             Controls.Add(button4);
             Controls.Add(panel1);
             Controls.Add(textBox4);
@@ -450,5 +466,6 @@
         private RadioButton radioButton1;
         private Panel panel1;
         private Button button4;
+        private Button button3;
     }
 }
