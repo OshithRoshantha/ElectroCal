@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
-            label1 = new Label();
-            userName = new Label();
             panel1 = new Panel();
+            button1 = new Button();
+            panel2 = new Panel();
             bill = new Label();
             chargeOnUnits = new Label();
             units = new Label();
@@ -40,51 +40,57 @@
             label7 = new Label();
             label3 = new Label();
             label2 = new Label();
-            button1 = new Button();
+            userName = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            label1.ForeColor = Color.FromArgb(212, 188, 12);
-            label1.Location = new Point(41, 62);
-            label1.Name = "label1";
-            label1.Size = new Size(137, 32);
-            label1.TabIndex = 1;
-            label1.Text = "Bill history";
-            // 
-            // userName
-            // 
-            userName.AutoSize = true;
-            userName.BackColor = Color.Transparent;
-            userName.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            userName.ForeColor = Color.FromArgb(212, 188, 12);
-            userName.Location = new Point(43, 34);
-            userName.Name = "userName";
-            userName.Size = new Size(0, 28);
-            userName.TabIndex = 32;
-            userName.Click += userName_Click;
             // 
             // panel1
             // 
+            panel1.AutoScroll = true;
             panel1.BackColor = Color.Transparent;
-            panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.BackgroundImageLayout = ImageLayout.Stretch;
-            panel1.Controls.Add(bill);
-            panel1.Controls.Add(chargeOnUnits);
-            panel1.Controls.Add(units);
-            panel1.Controls.Add(dateDuration);
-            panel1.Controls.Add(label4);
-            panel1.Controls.Add(label7);
-            panel1.Controls.Add(label3);
-            panel1.Controls.Add(label2);
-            panel1.Location = new Point(31, 137);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(userName);
+            panel1.Controls.Add(label1);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(372, 124);
-            panel1.TabIndex = 33;
+            panel1.Size = new Size(432, 703);
+            panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(149, 36, 75);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Location = new Point(315, 61);
+            button1.Name = "button1";
+            button1.Size = new Size(66, 36);
+            button1.TabIndex = 46;
+            button1.Text = "Back";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.Transparent;
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Stretch;
+            panel2.Controls.Add(bill);
+            panel2.Controls.Add(chargeOnUnits);
+            panel2.Controls.Add(units);
+            panel2.Controls.Add(dateDuration);
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(label2);
+            panel2.Location = new Point(29, 136);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(372, 124);
+            panel2.TabIndex = 45;
             // 
             // bill
             // 
@@ -178,19 +184,28 @@
             label2.TabIndex = 34;
             label2.Text = "Period";
             // 
-            // button1
+            // userName
             // 
-            button1.BackColor = Color.FromArgb(149, 36, 75);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(317, 62);
-            button1.Name = "button1";
-            button1.Size = new Size(66, 36);
-            button1.TabIndex = 42;
-            button1.Text = "Back";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            userName.AutoSize = true;
+            userName.BackColor = Color.Transparent;
+            userName.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            userName.ForeColor = Color.FromArgb(212, 188, 12);
+            userName.Location = new Point(41, 33);
+            userName.Name = "userName";
+            userName.Size = new Size(0, 28);
+            userName.TabIndex = 44;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(212, 188, 12);
+            label1.Location = new Point(39, 61);
+            label1.Name = "label1";
+            label1.Size = new Size(137, 32);
+            label1.TabIndex = 43;
+            label1.Text = "Bill history";
             // 
             // Form5
             // 
@@ -199,10 +214,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
-            Controls.Add(button1);
             Controls.Add(panel1);
-            Controls.Add(userName);
-            Controls.Add(label1);
             MaximumSize = new Size(450, 750);
             MinimumSize = new Size(450, 750);
             Name = "Form5";
@@ -210,23 +222,25 @@
             Text = "ElectroCal";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private Label label1;
-        private Label userName;
         private Panel panel1;
-        private Label label2;
-        private Label label3;
-        private Label label7;
-        private Label label4;
+        private Button button1;
+        private Panel panel2;
+        private Label bill;
+        private Label chargeOnUnits;
         private Label units;
         private Label dateDuration;
-        private Label chargeOnUnits;
-        private Label bill;
-        private Button button1;
+        private Label label4;
+        private Label label7;
+        private Label label3;
+        private Label label2;
+        private Label userName;
+        private Label label1;
     }
 }
