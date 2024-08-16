@@ -16,9 +16,9 @@ namespace ElectroCalc
             name = formatedUserName;
             this.email = email;
             panel1.Visible = true;
+            panel2.Visible = false;
             LoadBillHistory();
         }
-
         private void LoadBillHistory()
         {
             string connectionString = "Data Source=OSHITH-PC\\SQLEXPRESS;Initial Catalog=ElectroCal;Integrated Security=True;TrustServerCertificate=True";
@@ -44,6 +44,8 @@ namespace ElectroCalc
                         BackgroundImage = panel2.BackgroundImage,
                         BackgroundImageLayout = panel2.BackgroundImageLayout
                     };
+
+                    // Clone the labels and set the values from the database
                     foreach (Control control in panel2.Controls)
                     {
                         if (control is Label label)
@@ -54,9 +56,11 @@ namespace ElectroCalc
                                 Location = label.Location,
                                 Font = label.Font,
                                 ForeColor = label.ForeColor,
-                                BackColor = label.BackColor
+                                BackColor = label.BackColor,
+                                Name = label.Name // Preserve the name to use in switch-case
                             };
-                            clonedLabel.Text = label.Text;
+
+                            // Set the text based on the database values
                             switch (label.Name)
                             {
                                 case "dateDuration":
@@ -71,23 +75,28 @@ namespace ElectroCalc
                                 case "chargeOnUnits":
                                     clonedLabel.Text = reader["chargeOnUnits"].ToString();
                                     break;
+                                default:
+                                    clonedLabel.Text = label.Text; // Retain template text for non-database labels
+                                    break;
                             }
+
                             clonedPanel.Controls.Add(clonedLabel);
                         }
                     }
+
                     yOffset += clonedPanel.Height + 15;
-                    this.Controls.Add(clonedPanel);
+
+                    // Add the cloned panel to the correct container (e.g., panel1 or form)
+                    panel1.Controls.Add(clonedPanel); // Assuming panel1 is the container
                 }
 
                 reader.Close();
-
             }
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3(name, email);
-            form3.Show();
-            this.Close();
+
         }
 
         private void userName_Click(object sender, EventArgs e)
@@ -96,7 +105,9 @@ namespace ElectroCalc
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            Form3 form3 = new Form3(name, email);
+            form3.Show();
+            this.Close();
         }
     }
 }

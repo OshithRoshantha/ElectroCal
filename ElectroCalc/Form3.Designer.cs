@@ -369,7 +369,7 @@
             button4.FlatStyle = FlatStyle.Flat;
             button4.Font = new Font("Segoe UI Semibold", 5F, FontStyle.Bold);
             button4.ForeColor = Color.FromArgb(212, 188, 12);
-            button4.Location = new Point(45, 78);
+            button4.Location = new Point(45, 82);
             button4.Name = "button4";
             button4.Size = new Size(85, 25);
             button4.TabIndex = 62;

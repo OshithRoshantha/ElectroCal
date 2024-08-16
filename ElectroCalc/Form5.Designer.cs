@@ -57,6 +57,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
+            panel1.Padding = new Padding(0, 0, 0, 15);
             panel1.Size = new Size(432, 703);
             panel1.TabIndex = 0;
             // 
@@ -66,7 +67,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(315, 61);
+            button1.Location = new Point(315, 60);
             button1.Name = "button1";
             button1.Size = new Size(66, 36);
             button1.TabIndex = 46;
@@ -87,8 +88,9 @@
             panel2.Controls.Add(label7);
             panel2.Controls.Add(label3);
             panel2.Controls.Add(label2);
-            panel2.Location = new Point(29, 136);
+            panel2.Location = new Point(29, 135);
             panel2.Name = "panel2";
+            panel2.Padding = new Padding(0, 0, 0, 15);
             panel2.Size = new Size(372, 124);
             panel2.TabIndex = 45;
             // 
@@ -190,7 +192,7 @@
             userName.BackColor = Color.Transparent;
             userName.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             userName.ForeColor = Color.FromArgb(212, 188, 12);
-            userName.Location = new Point(41, 33);
+            userName.Location = new Point(41, 32);
             userName.Name = "userName";
             userName.Size = new Size(0, 28);
             userName.TabIndex = 44;
@@ -201,7 +203,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             label1.ForeColor = Color.FromArgb(212, 188, 12);
-            label1.Location = new Point(39, 61);
+            label1.Location = new Point(39, 60);
             label1.Name = "label1";
             label1.Size = new Size(137, 32);
             label1.TabIndex = 43;
