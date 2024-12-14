@@ -11,10 +11,10 @@ ElectroCal is a Windows application designed for calculating electricity bills. 
 ## Installation
 
 1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/OshithRoshantha/ElectroCal.git
-   ```
 
+```bash
+     git clone https://github.com/OshithRoshantha/ElectroCal.git
+```
 2. **Open the Project:**
 
 - Launch Visual Studio.
@@ -31,5 +31,6 @@ ElectroCal is a Windows application designed for calculating electricity bills. 
 
 - In Visual Studio, select the startup project.
 - Press `F5` or click the `Start` button to build and run the application.
+
 
 
