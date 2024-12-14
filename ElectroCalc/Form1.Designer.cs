@@ -41,6 +41,7 @@
             label2 = new Label();
             label9 = new Label();
             label3 = new Label();
+            label8 = new Label();
             SuspendLayout();
             // 
             // label4
@@ -183,6 +184,18 @@
             label3.Text = "Couldn't find your Account. \r\nPlease signup to create new Account";
             label3.Visible = false;
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = Color.Transparent;
+            label8.Font = new Font("Segoe UI", 7F);
+            label8.ForeColor = SystemColors.ControlDarkDark;
+            label8.Location = new Point(153, 679);
+            label8.Name = "label8";
+            label8.Size = new Size(117, 15);
+            label8.TabIndex = 43;
+            label8.Text = "By Oshith Roshantha";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -190,6 +203,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(432, 703);
+            Controls.Add(label8);
             Controls.Add(label3);
             Controls.Add(label9);
             Controls.Add(label2);
@@ -224,5 +238,6 @@
         private Label label2;
         private Label label9;
         private Label label3;
+        private Label label8;
     }
 }

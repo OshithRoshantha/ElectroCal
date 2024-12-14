@@ -9,6 +9,7 @@ namespace ElectroCalc
         string connectionString = "Data Source=OSHITH-PC\\SQLEXPRESS;Initial Catalog=ElectroCal;Integrated Security=True;TrustServerCertificate=True";
 
         string userName;
+        string email;
         public Form1()
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace ElectroCalc
         private void button1_Click(object sender, EventArgs e)
         {
             string emailInput = textBox1.Text;
+            email = emailInput;
             string passwordInput= textBox2.Text;
 
             if (emailInput != "" && passwordInput != "")
@@ -36,7 +38,7 @@ namespace ElectroCalc
                     {
                         label9.Visible = false;
                         userName = GetUserNameByEmail(emailInput);
-                        Form3 form3 = new Form3(userName);
+                        Form3 form3 = new Form3(userName, email);
                         form3.Show();
                         this.Hide();
                     }

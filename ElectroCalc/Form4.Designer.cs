@@ -96,6 +96,7 @@
             label4.Size = new Size(176, 20);
             label4.TabIndex = 3;
             label4.Text = "Tariff Scheme: D-2024/07";
+            label4.Click += label4_Click;
             // 
             // datePeriod
             // 
@@ -251,11 +252,11 @@
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             button2.ForeColor = SystemColors.ButtonHighlight;
-            button2.Location = new Point(155, 632);
+            button2.Location = new Point(154, 632);
             button2.Name = "button2";
             button2.Size = new Size(115, 39);
             button2.TabIndex = 19;
-            button2.Text = "Exit";
+            button2.Text = "Back";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
             // 
